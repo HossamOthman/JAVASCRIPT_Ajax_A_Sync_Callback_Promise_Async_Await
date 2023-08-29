@@ -41,11 +41,42 @@ function showTextSync() {
                 syncText1.appendChild(countElem)         
             } 
 
-            const oText = document.createElement('span');
+            const oText = document.createElement('h4');
             oText.innerHTML = "this text came after the loop iteration";
             syncText2.appendChild(oText);
     }
     setTimeout(processLoopAndAppend, delay);
 }
-// Async
+
+
+// Async & Callback
+const button = document.getElementById('asyncCallback');
+let asyncCallbackTxt = document.getElementById('asyncCallbackTxt');
+
+function asyncCallbackFunc(){
+    asyncCallbackTxt.innerHTML = "";
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', 'http://universities.hipolabs.com/search?country=United+States', true)
+
+    
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+            gathertext.call(xhr);
+        }
+    };
+    xhr.send()
+}
+
+function gathertext() {
+        console.log('callback success... wait for the Paragraph to load!');
+        
+        let universities = JSON.parse(this.responseText);
+        universities.forEach(uni => {
+            const uniCard = document.createElement('li');
+            uniCard.innerHTML = `${uni.name}: ${uni.web_pages} `
+            asyncCallbackTxt.appendChild(uniCard)
+        });
+}
+
+button.addEventListener('click', asyncCallbackFunc)
 
