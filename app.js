@@ -1,6 +1,7 @@
 ////////////////////////////////////////////////////////////////
 // AJAX
 let ajaxText = document.getElementById('AJAXTxt');
+ajaxText.innerHTML = "Click to find universities in the <B>USA</B> using AJAX!"
 
 function showUniversitiesAJAX() {
     ajaxText.innerHTML = "";
@@ -26,6 +27,8 @@ function showUniversitiesAJAX() {
 // Sync
 let syncText1 = document.getElementById('synctxt1');
 let syncText2 = document.getElementById('synctxt2');
+    syncText1.innerHTML = "Click to load a counter synchronously <u>3 seconds delay</u> and then a text";
+    syncText2.innerHTML = "...and then a text.";
 
 function showTextSync() {
     syncText1.innerHTML = "";
@@ -48,15 +51,16 @@ function showTextSync() {
     setTimeout(processLoopAndAppend, delay);
 }
 
-
+////////////////////////////////////////////////////////////////
 // Async & Callback
-const button = document.getElementById('asyncCallback');
+const callbackBtn = document.getElementById('asyncCallback');
 let asyncCallbackTxt = document.getElementById('asyncCallbackTxt');
+asyncCallbackTxt.innerHTML = "Click to find universities in the <B>UK</B> using Callback!"
 
 function asyncCallbackFunc(){
     asyncCallbackTxt.innerHTML = "";
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', 'http://universities.hipolabs.com/search?country=United+States', true)
+    xhr.open('GET', 'http://universities.hipolabs.com/search?country=United+Kingdom', true)
 
     
         xhr.onload = function() {
@@ -78,5 +82,34 @@ function gathertext() {
         });
 }
 
-button.addEventListener('click', asyncCallbackFunc)
+callbackBtn.addEventListener('click', asyncCallbackFunc)
+
+
+////////////////////////////////////////////////////////////////
+// Async & Promise
+const promiseBtn = document.getElementById('promiseBtn');
+let asyncPromisedTxt = document.getElementById('PromisedTxt');
+asyncPromisedTxt.innerHTML = "Click to find universities in the <B>Austeria</B> using Promise!";
+
+function promiseFunc(){
+    asyncPromisedTxt.innerHTML = "";
+
+    fetch('http://universities.hipolabs.com/search?country=Austria')
+    .then(responseText => {
+        return responseText.json()
+    }).then(jsonData => {
+            console.log('Promise success... wait for the Paragraph to load!')
+
+            jsonData.forEach(uni => {
+                const uniCard = document.createElement('li');
+                uniCard.innerHTML = `${uni.name}: ${uni.web_pages} `
+                asyncPromisedTxt.appendChild(uniCard)
+            });
+    }).catch(err => {
+        console.log('errors:' + err.message)
+    })
+}
+
+
+promiseBtn.addEventListener('click', promiseFunc);
 

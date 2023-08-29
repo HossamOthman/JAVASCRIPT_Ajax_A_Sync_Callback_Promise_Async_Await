@@ -13,13 +13,13 @@
     <hr>
 
     <h2>AJAX</h2>
-    <h4> Asynchronous JavaScript and XML, uses XMLHTTPRequest to communicate with servers. it sends and receives data in various formats (XML. JSON, TXT...) </h4>
+    <h4>Stands for: <u>A</u>synchronous <u>J</u>avaScript <u>A</u>nd <u>X</u>ML, uses <u>XMLHTTPRequest</u> to communicate with servers. it sends and receives data in various formats (XML. JSON, TXT...) </h4>
     <button onclick=showUniversitiesAJAX()>Press to call API with AJAX</button>
     <p class ="resultData" id="AJAXTxt"></p>
     <hr>
 
     <h2>The Sync...</h2>
-    <h4>Async is multi-thread, which means operations or programs can run in parallel. Sync is single-thread, so only one operation or program will run at a time. Async is non-blocking, which means it will send multiple requests to a server.</h4>
+    <h4>Sync is a <u>Single-Thread</u> operation, so only one operation or program will run at a time. it's how most functions <u>normally</u> run in JavaScript.</h4>
     <button onclick=showTextSync()>Press to call text with Sync</button>
     <div class="syncAsync">
         <div>
@@ -32,12 +32,16 @@
     <hr>
 
     <h2>Async & Callback</h2>
-    <h4>A callback is just a function that's passed into another function, with the expectation that the callback will be called at the appropriate time.<br>classic way is to use <u>addEventListener</u> with the <u>XMLHttpRequest</u></h4>
+    <h4>A callback is just a function that's passed into another function, with the expectation that the callback will be called at the appropriate time.<br>classic way is to use <u>.addEventListener</u> with the <u>XMLHttpRequest</u></h4>
     <button id="asyncCallback">Press to call API with Callback</button>
     <p class ="resultData" id="asyncCallbackTxt"></p>
     <hr>
 
-    <h2></h2>
+    <h2>Async & Promise</h2>
+    <h4>An async function declaration creates an AsyncFunction object. Each time when an async function is called, it returns a new Promise which will be resolved with the value returned by the async function, or rejected with an exception uncaught within the async function. <br>To be used Basically with <u>fetch</u> we can chain operations using <u>.then</u>... we still need to use <u>addEventListener</u> anyway.</h4>
+    <button id="promiseBtn">Press to call API with a Promise</button>
+    <p class ="resultData" id="PromisedTxt"></p>
+    <hr>
 
     <h2></h2>
     
