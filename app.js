@@ -114,7 +114,7 @@ function promiseFunc(){
             jsonData.forEach(uni => {
                 const uniCard = document.createElement('li');
                 uniCard.innerHTML = `${uni.name}: ${uni.web_pages} `
-                austeriaInput.innerHTML = `found ${counter++} University in the Austeria!`
+                austeriaInput.innerHTML = `found ${counter++} University in Austeria!`
                 asyncPromisedTxt.appendChild(uniCard)
             });
     }).catch(err => {
@@ -143,7 +143,7 @@ async function asyncAwaitFunc() {
         data.forEach(uni => {
             const uniCard = document.createElement('li');
             uniCard.innerHTML = `${uni.name}: ${uni.web_pages} `
-            germanyInput.innerHTML = `found ${counter++} University in the Germany!`
+            germanyInput.innerHTML = `found ${counter++} University in Germany!`
             asyncAwaitTxt.appendChild(uniCard)
         });
     } catch (err) {
