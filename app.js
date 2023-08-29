@@ -113,3 +113,27 @@ function promiseFunc(){
 
 promiseBtn.addEventListener('click', promiseFunc);
 
+////////////////////////////////////////////////////////////////
+// Async & Await
+const asyncAwaitBtn = document.getElementById('asyncAwaitBtn');
+let asyncAwaitTxt = document.getElementById('asyncAwaitTxt');
+asyncAwaitTxt.innerHTML = "Click to find universities in the <B>Germany</B> using Async Await!";
+
+async function asyncAwaitFunc() {
+    try {
+        asyncAwaitTxt.innerHTML = "";
+        const responseText = await fetch('http://universities.hipolabs.com/search?country=Germany');
+        const data = await responseText.json();
+        console.log('Async success... wait for the Paragraph to load!')
+        data.forEach(uni => {
+            const uniCard = document.createElement('li');
+            uniCard.innerHTML = `${uni.name}: ${uni.web_pages} `
+            asyncAwaitTxt.appendChild(uniCard)
+        });
+    } catch (err) {
+        console.log('errors: ' + err.message)
+    }
+}
+
+
+asyncAwaitBtn.addEventListener('click', asyncAwaitFunc);
