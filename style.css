@@ -1,5 +1,6 @@
 body {
     background-color: darkgrey;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 
 
@@ -10,4 +11,15 @@ body {
      height: 75px;
      overflow: scroll;
      background-color: lightgray ;
+}
+
+.syncAsync{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+.syncAsync>div{
+    width: 100%;
+    padding: 0 15px;
 }

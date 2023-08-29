@@ -1,14 +1,15 @@
-
+////////////////////////////////////////////////////////////////
 // AJAX
-const ajaxText = document.getElementById('AJAXtxt');
+let ajaxText = document.getElementById('AJAXTxt');
 
-function showUniversities() {
+function showUniversitiesAJAX() {
+    ajaxText.innerHTML = "";
     let xhr = new XMLHttpRequest();
     xhr.open('GET', 'http://universities.hipolabs.com/search?country=United+States', true);
 
     xhr.onload = function() {
         if (xhr.status === 200) {
-            console.log('success... wait for the Paragraph to load!')
+            console.log('Ajax success... wait for the Paragraph to load!')
             let universities = JSON.parse(this.response);
             universities.forEach(uni => {
                 const uniCard = document.createElement('li');
@@ -21,3 +22,30 @@ function showUniversities() {
 };
 
 ////////////////////////////////////////////////////////////////
+// Async vs Sync
+// Sync
+let syncText1 = document.getElementById('synctxt1');
+let syncText2 = document.getElementById('synctxt2');
+
+function showTextSync() {
+    syncText1.innerHTML = "";
+    syncText2.innerHTML = "";
+    console.log(`Sync success... wait for the Paragraph to load!`);
+    let count = 0;
+    const delay = 3000;
+        function processLoopAndAppend() {
+            for (let i = 0; i < 50; i++) {  
+                const countElem = document.createElement('li');
+                count++
+                countElem.innerHTML = count;
+                syncText1.appendChild(countElem)         
+            } 
+
+            const oText = document.createElement('span');
+            oText.innerHTML = "this text came after the loop iteration";
+            syncText2.appendChild(oText);
+    }
+    setTimeout(processLoopAndAppend, delay);
+}
+// Async
+
