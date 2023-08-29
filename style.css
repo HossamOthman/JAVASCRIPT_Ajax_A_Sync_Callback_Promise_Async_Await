@@ -24,3 +24,11 @@ body {
     width: 100%;
     padding: 0 15px;
 }
+
+.searchInfoInput{
+    margin-left: 15px;
+    background-color: lightgray;
+    padding: 0 10px;
+    width: 20%;
+   
+}
