@@ -1,53 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <script src="app.js" defer></script>
-    <title>JAVASCRIPT Ajax - Sync - Async & Callback - Async & Promise - Async & Await</title>
-</head>
-<body>
-    <H1>Ajax - Sync - Async & Callback - Async & Promise - Async & Await</H1>
-    <p><u>Hossam Othman: Web Development Techniques</u></p>
-    <hr>
+    <title>
+      JAVASCRIPT Ajax - Sync - Async & Callback - Async & Promise - Async &
+      Await
+    </title>
+  </head>
+  <body>
+    <main>
+      <h1>Ajax - Sync - Async & Callback - Async & Promise - Async & Await</h1>
+      <p class="underTitle"><u>Hossam Othman: Web Development Techniques</u></p>
+      <hr />
 
-    <h2>AJAX</h2>
-    <h4>Stands for: <u>A</u>synchronous <u>J</u>avaScript <u>A</u>nd <u>X</u>ML, uses <u>XMLHTTPRequest</u> to communicate with servers. it sends and receives data in various formats (XML. JSON, TXT...) </h4>
-    <button onclick=showUniversitiesAJAX()>Press to call API with AJAX</button><span id="usaInput" class="searchInfoInput"></span>
-    <p class ="resultData" id="AJAXTxt"></p>
-    <hr>
+      <h2>AJAX</h2>
+      <h4>
+        Stands for: <u>A</u>synchronous <u>J</u>avaScript <u>A</u>nd <u>X</u>ML,
+        uses <u>XMLHTTPRequest</u> to communicate with servers. it sends and
+        receives data in various formats (XML. JSON, TXT...)
+      </h4>
+      <button onclick="showUniversitiesAJAX()">
+        Press to call API with AJAX</button
+      ><span id="usaInput" class="searchInfoInput"></span>
+      <p class="resultData" id="AJAXTxt"></p>
+      <hr />
 
-    <h2>The Sync...</h2>
-    <h4>Sync is a <u>Single-Thread</u> operation, so only one operation or program will run at a time. it's how most functions <u>normally</u> run in JavaScript.</h4>
-    <button onclick=showTextSync()>Press to call text with Sync</button><span id="syncCount" class="searchInfoInput"></span>
-    <div class="syncAsync">
+      <h2>The Sync...</h2>
+      <h4>
+        Sync is a <u>Single-Thread</u> operation, so only one operation or
+        program will run at a time. it's how most functions <u>normally</u> run
+        in JavaScript.
+      </h4>
+      <button onclick="showTextSync()">Press to call text with Sync</button
+      ><span id="syncCount" class="searchInfoInput"></span>
+      <div class="syncAsync">
         <div>
-            <p class ="resultData" id="synctxt1"></p>
+          <p class="resultData" id="synctxt1"></p>
         </div>
         <div>
-            <p class ="resultData" id="synctxt2"></p>
+          <p class="resultData" id="synctxt2"></p>
         </div>
-    </div>
-    <hr>
+      </div>
+      <hr />
 
-    <h2>Async & Callback</h2>
-    <h4>A callback is just a function that's passed into another function, with the expectation that the callback will be called at the appropriate time.<br>classic way is to use <u>.addEventListener</u> with the <u>XMLHttpRequest</u></h4>
-    <button id="asyncCallback">Press to call API with Callback</button><span id="UKInput" class="searchInfoInput"></span>
-    <p class ="resultData" id="asyncCallbackTxt"></p>
-    <hr>
+      <h2>Async & Callback</h2>
+      <h4>
+        A callback is just a function that's passed into another function, with
+        the expectation that the callback will be called at the appropriate
+        time.<br />classic way is to use <u>.addEventListener</u> with the
+        <u>XMLHttpRequest</u>
+      </h4>
+      <button id="asyncCallback">Press to call API with Callback</button
+      ><span id="UKInput" class="searchInfoInput"></span>
+      <p class="resultData" id="asyncCallbackTxt"></p>
+      <hr />
 
-    <h2>Async & Promise</h2>
-    <h4>An async function declaration creates an AsyncFunction object. Each time when an async function is called, it returns a new Promise which will be resolved with the value returned by the async function, or rejected with an exception uncaught within the async function. <br>To be used Basically with <u>fetch</u> we can chain operations using <u>.then</u>... we still need to use <u>addEventListener</u> anyway.</h4>
-    <button id="promiseBtn">Press to call API with a Promise</button><span id="austeriaInput" class="searchInfoInput"></span>
-    <p class ="resultData" id="PromisedTxt"></p>
-    <hr>
+      <h2>Async & Promise</h2>
+      <h4>
+        An async function declaration creates an AsyncFunction object. Each time
+        when an async function is called, it returns a new Promise which will be
+        resolved with the value returned by the async function, or rejected with
+        an exception uncaught within the async function. <br />To be used
+        Basically with <u>fetch</u> we can chain operations using
+        <u>.then</u>... we still need to use <u>addEventListener</u> anyway.
+      </h4>
+      <button id="promiseBtn">Press to call API with a Promise</button
+      ><span id="austeriaInput" class="searchInfoInput"></span>
+      <p class="resultData" id="PromisedTxt"></p>
+      <hr />
 
-    <h2>Async & Await</h2>
-    <h4>The async function declaration <u>creates a binding</u> of a new async function to a given name. The await keyword is permitted within the function body, enabling asynchronous, promise-based behavior to be written in a cleaner style and avoiding the need to explicitly configure promise chains. <br>To be used Basically with <u>fetch</u> we can chain operations using <u>.then</u>... we still need to use <u>addEventListener</u> anyway.</h4>
-    <button id="asyncAwaitBtn">Press to call API with Async Await</button><span id="germanyInput" class="searchInfoInput"></span>
-    <p class ="resultData" id="asyncAwaitTxt"></p>
-    <hr>
-    
-</body>
+      <h2>Async & Await</h2>
+      <h4>
+        The async function declaration <u>creates a binding</u> of a new async
+        function to a given name. The await keyword is permitted within the
+        function body, enabling asynchronous, promise-based behavior to be
+        written in a cleaner style and avoiding the need to explicitly configure
+        promise chains. <br />To be used Basically with <u>fetch</u> we can
+        chain operations using <u>.then</u>... we still need to use
+        <u>addEventListener</u> anyway.
+      </h4>
+      <button id="asyncAwaitBtn">Press to call API with Async Await</button
+      ><span id="germanyInput" class="searchInfoInput"></span>
+      <p class="resultData" id="asyncAwaitTxt"></p>
+      <hr />
+    </main>
+  </body>
 </html>

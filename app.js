@@ -18,7 +18,7 @@ function showUniversitiesAJAX() {
             universities.forEach(uni => {
                 const uniCard = document.createElement('li');
                 uniCard.innerHTML = `${uni.name}: ${uni.web_pages} `
-                usatext.innerHTML = `found ${counter++} University in the USA!`;
+                usatext.innerHTML = `found <b> ${counter++} </b> University in the USA!`;
                 ajaxText.appendChild(uniCard)
             });
         }
@@ -48,7 +48,7 @@ function showTextSync() {
                 count++
                 countElem.innerHTML = count;
                 syncText1.appendChild(countElem)
-                syncCount.innerHTML = `the count ran till ${counter++}`         
+                syncCount.innerHTML = `the count ran till <b> ${counter++} </b>`         
             } 
 
             const oText = document.createElement('h4');
@@ -87,7 +87,7 @@ function gathertext() {
         universities.forEach(uni => {
             const uniCard = document.createElement('li');
             uniCard.innerHTML = `${uni.name}: ${uni.web_pages} `
-            UKInput.innerHTML = `found ${counter++} University in the UK!`
+            UKInput.innerHTML = `found <b> ${counter++} </b> University in the UK!`
             asyncCallbackTxt.appendChild(uniCard)
         });
 }
@@ -114,7 +114,7 @@ function promiseFunc(){
             jsonData.forEach(uni => {
                 const uniCard = document.createElement('li');
                 uniCard.innerHTML = `${uni.name}: ${uni.web_pages} `
-                austeriaInput.innerHTML = `found ${counter++} University in Austeria!`
+                austeriaInput.innerHTML = `found <b> ${counter++} </b> University in Austeria!`
                 asyncPromisedTxt.appendChild(uniCard)
             });
     }).catch(err => {
@@ -143,7 +143,7 @@ async function asyncAwaitFunc() {
         data.forEach(uni => {
             const uniCard = document.createElement('li');
             uniCard.innerHTML = `${uni.name}: ${uni.web_pages} `
-            germanyInput.innerHTML = `found ${counter++} University in Germany!`
+            germanyInput.innerHTML = `found <b> ${counter++} </b> University in Germany!`
             asyncAwaitTxt.appendChild(uniCard)
         });
     } catch (err) {
