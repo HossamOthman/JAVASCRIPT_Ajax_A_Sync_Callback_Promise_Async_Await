@@ -5,6 +5,35 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+
+body {
+    background-color: #333;
+}
+
+.title {
+    margin: 35px auto 25px;
+}
+header  .title  p {
+    color: black;
+    font-size: smaller;
+    text-align: center;
+    color: antiquewhite;
+}
+
+h1 {
+    margin: 0 auto 10px ;
+    text-align: center;
+    color: antiquewhite;
+}
+
+
+main {
+    background-color: darkgrey;
+    color: #333;
+    margin: 0 50px;
+    padding: 0 50px;
+}
+
 nav {
     display: flex;
     align-items: center;
