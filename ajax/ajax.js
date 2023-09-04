@@ -1,3 +1,4 @@
+// ajax call file
 let CalledTextArea = document.getElementById("calledTxtFile");
 CalledTextArea.innerHTML = "Click to get the sample txt file through AJAX";
 
@@ -10,7 +11,7 @@ function LoadText() {
   // 1 - create the XHR object
   var xhr = new XMLHttpRequest();
   // 2 - open function: type, url/file, async
-  xhr.open("GET", "../sample.txt", true);
+  xhr.open("GET", "../samples/sample.txt", true);
   // 3 - now we use onload or onreadystatechange
   xhr.onload = function () {
     if (this.status == 200) {
@@ -34,5 +35,59 @@ function LoadText() {
 }
 
 ////////////////////////////////////
+// ajax local json
+// call an object
 
+document.getElementById('callObject').addEventListener('click', LoadUser );
 
+function LoadUser() {
+    xhr = new XMLHttpRequest();
+    xhr.open('GET', '../samples/user.json', true)
+
+    xhr.onload = function () {
+        if (this.status == 200) {
+            var user = JSON.parse(this.responseText);
+            
+            var output = '';
+
+            output +=   '<ul>' + 
+                            '<li>ID:' + user.id + '</li>' +
+                            '<li>Name: ' + user.name + '</li>' +
+                            '<li>Email: ' + user.email + '</li>' +
+                        '<ul>';
+            document.getElementById('calledObjectFile').innerHTML = output;
+        }
+    }
+
+    xhr.send();
+
+}
+////////////////////////////////////
+// ajax local json
+// call an array of objects
+
+document.getElementById('callArrayOfOBjects').addEventListener('click', LoadUsers );
+
+function LoadUsers() {
+    xhr = new XMLHttpRequest();
+    xhr.open('GET', '../samples/Users.json', true)
+
+    xhr.onload = function () {
+        if (this.status == 200) {
+            var data = JSON.parse(this.responseText);
+            var output = '';
+            data.forEach(user => {
+                output +=   '<ul>' + 
+                                '<li>ID:' + user.id + '</li>' +
+                                '<li>Name: ' + user.name + '</li>' +
+                                '<li>Email: ' + user.email + '</li>' +
+                            '<ul>';
+                            document.getElementById('calledArrayFile').innerHTML = output;
+            });
+            
+            
+        }
+    }
+
+    xhr.send();
+};
