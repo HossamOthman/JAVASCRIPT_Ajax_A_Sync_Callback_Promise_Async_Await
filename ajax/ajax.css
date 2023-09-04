@@ -14,3 +14,24 @@ main button {
     font-size: large;
     min-width: 220px;
 }
+
+.resultData{
+    padding: 15px;
+    margin: 10px auto;
+     width: 95%;
+     height: 115px;
+     overflow: scroll;
+     background-color: lightgray ;
+}
+
+.callSpanContainer {
+    width: 95%;
+    margin: auto;
+}
+
+.searchInfoInput{
+    margin-left: 15px;
+    background-color: lightgray;
+    font-size: large;
+    padding: 6px 10px;   
+}

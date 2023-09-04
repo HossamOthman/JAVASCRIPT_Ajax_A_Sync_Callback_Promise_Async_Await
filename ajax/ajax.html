@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="ajax.css">
     <link rel="stylesheet" href="../styleMenu.css">
-    <script src="ajax.js"></script>
+    <script src="ajax.js" defer></script>
     <title>AJAX</title>
 </head>
 <body>
@@ -18,7 +18,7 @@
         <nav>
           <div class="wrapper">
             
-            <div class="logo"><a href="#"></a>JS API CALL</div>
+            <div class="logo"><a href="#"></a>AJAX</div>
             <ul class="nav-links">
               <li><a href="../index.html">Home</li>
               <li><a href="#">About</li>
@@ -79,7 +79,16 @@
         </nav>
       </header>
       <main>
-        <h2>hi</h2>
+        <h2>Call a text File</h2>
+        <h4></h4>
+        
+        <div class="callSpanContainer">
+          <button id="callFile">Load Text File</button>
+          <span id="textInput" class="searchInfoInput"></span>
+        </div>
+        
+        <p class="resultData" id="calledTxtFile"></p>
+        <hr />
 
 
       </main>
