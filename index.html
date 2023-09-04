@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styleMenu.css" />
     <script src="app.js" defer></script>
     <title>
       JAVASCRIPT Ajax - Sync - Async & Callback - Async & Promise - Async &
@@ -13,21 +14,21 @@
   <body>
     <header>
       <h1>Ajax - Sync - Async & Callback - Async & Promise - Async & Await</h1>
-          <p><u>Hossam Othman: Web Development Techniques</u></p>
+          <p>Hossam Othman: Web Development Techniques</p>
       <nav>
         <div class="wrapper">
           
           <div class="logo"><a href="#"></a>JS API CALL</div>
           <ul class="nav-links">
-            <li><a href="#">Home</li>
+            <li><a href="index.html">Home</li>
             <li><a href="#">About</li>
             <li>
-              <a href="#">Dropdown Menu</a>
+              <a href="#">Detailed API Examples</a>
               <ul class="drop-menu">
-                  <li><a href="#">Drop Menu 1</a></li>
-                  <li><a href="#">Drop Menu 2</a></li>
-                  <li><a href="#">Drop Menu 3</a></li>
-                  <li><a href="#">Drop Menu 4</a></li>
+                  <li><a href="#">Ajax</a></li>
+                  <li><a href="#">Async & Callback</a></li>
+                  <li><a href="#">Async & Promise</a></li>
+                  <li><a href="#">Async & Await</a></li>
                 </ul>
             </li>
             <li>
@@ -86,9 +87,12 @@
         uses <u>XMLHTTPRequest</u> to communicate with servers. it sends and
         receives data in various formats (XML. JSON, TXT...)
       </h4>
-      <button onclick="showUniversitiesAJAX()">
-        Press to call API with AJAX</button
-      ><span id="usaInput" class="searchInfoInput"></span>
+      <div class="callSpanContainer">
+        <button onclick="showUniversitiesAJAX()">
+          Press to call API with AJAX</button
+        ><span id="usaInput" class="searchInfoInput"></span>
+      </div>
+      
       <p class="resultData" id="AJAXTxt"></p>
       <hr />
 
@@ -98,8 +102,10 @@
         program will run at a time. it's how most functions <u>normally</u> run
         in JavaScript.
       </h4>
-      <button onclick="showTextSync()">Press to call text with Sync</button
-      ><span id="syncCount" class="searchInfoInput"></span>
+      <div class="callSpanContainer">
+        <button onclick="showTextSync()">Press to call text with Sync</button
+          ><span id="syncCount" class="searchInfoInput"></span>
+      </div>
       <div class="syncAsync">
         <div>
           <p class="resultData" id="synctxt1"></p>
@@ -117,8 +123,11 @@
         time.<br />classic way is to use <u>.addEventListener</u> with the
         <u>XMLHttpRequest</u>
       </h4>
-      <button id="asyncCallback">Press to call API with Callback</button
-      ><span id="UKInput" class="searchInfoInput"></span>
+      <div class="callSpanContainer">
+        <button id="asyncCallback">Press to call API with Callback</button
+          ><span id="UKInput" class="searchInfoInput"></span>
+      </div>
+      
       <p class="resultData" id="asyncCallbackTxt"></p>
       <hr />
 
@@ -131,8 +140,11 @@
         Basically with <u>fetch</u> we can chain operations using
         <u>.then</u>... we still need to use <u>addEventListener</u> anyway.
       </h4>
-      <button id="promiseBtn">Press to call API with a Promise</button
-      ><span id="austeriaInput" class="searchInfoInput"></span>
+      <div class="callSpanContainer">
+        <button id="promiseBtn">Press to call API with a Promise</button
+          ><span id="austeriaInput" class="searchInfoInput"></span>
+      </div>
+      
       <p class="resultData" id="PromisedTxt"></p>
       <hr />
 
@@ -146,8 +158,11 @@
         chain operations using <u>.then</u>... we still need to use
         <u>addEventListener</u> anyway.
       </h4>
-      <button id="asyncAwaitBtn">Press to call API with Async Await</button
-      ><span id="germanyInput" class="searchInfoInput"></span>
+      <div class="callSpanContainer">
+        <button id="asyncAwaitBtn">Press to call API with Async Await</button
+          ><span id="germanyInput" class="searchInfoInput"></span>
+      </div>
+      
       <p class="resultData" id="asyncAwaitTxt"></p>
       <hr />
     </main>
