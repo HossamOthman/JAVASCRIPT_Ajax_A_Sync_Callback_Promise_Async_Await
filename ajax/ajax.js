@@ -91,3 +91,41 @@ function LoadUsers() {
 
     xhr.send();
 };
+
+////////////////////////////////////
+// ajax external api
+
+document.getElementById('callExternalAPI').addEventListener('click', loadFrmGithub);
+
+let ExternalAPIInput = document.getElementById('ExternalAPIInput');
+
+function loadFrmGithub() {
+    var xhr = new XMLHttpRequest();
+
+    xhr.open('GET', 'https://api.github.com/users', true)
+
+    xhr.onload = function() {
+        if (this.status == 200) {
+            var data = JSON.parse(this.responseText);
+            
+            var output = '';
+            var count = 0;
+            data.forEach(user => {
+                count++;
+                output += 
+                `<div class="gitUser"> 
+                <img src="${user.avatar_url}" width="70px" height="70px" >
+                <ul> 
+                    <li>Count: ${count} </li>
+                    <li>ID: ${user.id} </li>
+                    <li>ID: ${user.login} </li>
+                </ul> 
+                </div>`
+
+                document.getElementById('calledExternalAPI').innerHTML = output;
+            });
+            ExternalAPIInput.innerHTML = `you have ${count} users`
+        }
+    }
+    xhr.send();
+};
