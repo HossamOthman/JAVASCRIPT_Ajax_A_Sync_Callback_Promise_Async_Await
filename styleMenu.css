@@ -78,7 +78,11 @@ nav .wrapper {
 }
 
 .nav-links>li:nth-of-type(3) {
-    width: 200px;
+    width: 230px;
+    padding: 0;
+}
+.nav-links>li:nth-of-type(4) {
+    width: 120px;
     padding: 0;
 }
 
@@ -97,7 +101,7 @@ nav .wrapper {
 
 .nav-links .drop-menu {
     background-color: black;
-    width: 200px;
+    width: 230px;
     top: 65px;
     line-height: 45px;
     position: absolute;
@@ -148,13 +152,14 @@ nav .wrapper {
 .content .row .mega-links {
 
     border-left: 1px solid #222;
-    width: 200px;
+    width: 180px;
 }
 
 .row > ul > li{
     padding: 0px 20px;
     height: 40px;
     line-height: 40px;
+    list-style: none;
 }
 .row > ul > li > a{
     padding: 0px 20px;
