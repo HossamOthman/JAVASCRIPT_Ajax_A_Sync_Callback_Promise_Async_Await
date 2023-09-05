@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styleMenu.css">
-    <link rel="stylesheet" href="ajax.css">
-    <script src="ajax.js" defer></script>
-    <title>AJAX</title>
+    <link rel="stylesheet" href="fetchapi.css">
+    <script src="fetchapi.js" defer></script>
+    <title>Fetch API</title>
 </head>
 <body>
     <header>
@@ -18,7 +18,7 @@
         <nav>
           <div class="wrapper">
             
-            <div class="logo"><a href="#"></a>AJAX</div>
+            <div class="logo"><a href="#"></a>Fetch API</div>
             <ul class="nav-links">
               <li><a href="../index.html">Home</li>
               <li><a href="#">About</li>
@@ -26,7 +26,7 @@
                 <a href="#">Detailed API Examples</a>
                 <ul class="drop-menu">
                     <li><a href="./ajax/ajax.html">Ajax</a></li>
-                    <li><a href="../fetchapi/fetchapi.html">Fetch API</a></li>
+                    <li><a href="fetchapi.html">Fetch API</a></li>
                     <li><a href="#">Async & Promise</a></li>
                     <li><a href="#">Async & Await</a></li>
                   </ul>
@@ -79,59 +79,8 @@
         </nav>
       </header>
       <main>
-        <section>
-          <h2>Call a text File</h2>
-          <h4></h4>
-        
-        <div class="callSpanContainer">
-          <button id="callFile">Load Text File</button>
-          <span id="textInput" class="searchInfoInput"></span>
-        </div>
-        
-        <p class="resultData" id="calledTxtFile"></p>
-        </section>
-        
-        <hr />
 
-        <section>
-          <h2>Call an object</h2>
-          <h4></h4>
-        
-          <div class="callSpanContainer">
-            <button id="callObject">Get from Object</button>
-            <span id="objectInput" class="searchInfoInput"></span>
-          </div>
-        
-          <p class="resultData" id="calledObjectFile"></p>
-        </section>
 
-        <hr />
-        
-        <section>
-          <h2>Call Array of objects</h2>
-          <h4></h4>
-        
-          <div class="callSpanContainer">
-            <button id="callArrayOfOBjects">Get from array of Objects</button>
-            <span id="arrayOfObjectInput" class="searchInfoInput"></span>
-          </div>
-        
-          <p class="resultData" id="calledArrayFile"></p>
-        </section>
-
-        <hr />
-        
-        <section>
-          <h2>Call External API</h2>
-          <h4></h4>
-        
-          <div class="callSpanContainer">
-            <button id="callExternalAPI">Call Github API </button>
-            <span id="ExternalAPIInput" class="searchInfoInput"></span>
-          </div>
-        
-          <div class="resultData" id="calledExternalAPI"></div>
-        </section>
 
       </main>
 </body>
