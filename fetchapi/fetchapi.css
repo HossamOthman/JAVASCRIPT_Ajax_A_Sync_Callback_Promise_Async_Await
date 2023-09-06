@@ -14,7 +14,7 @@
     color: antiquewhite;
     cursor: pointer;
 }
-.clickersContainer button:hover {
+.btn:hover {
 
     background-color: #444;
     color: antiquewhite;
