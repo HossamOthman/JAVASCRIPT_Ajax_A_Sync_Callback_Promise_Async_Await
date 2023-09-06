@@ -40,3 +40,22 @@ function getJSON() {
 }
 ////////////////////////////////
 // Get API
+document.getElementById("getAPI").addEventListener("click", getAPI);
+
+
+    
+function getAPI() {
+    fetch("https://jsonplaceholder.typicode.com/posts")
+      .then((res) => res.json())
+      .then((data) => {
+        let output = "<h3>Posts</h3>";
+        data.forEach((post) => {
+          output += `<div class="posts">
+                            <h4>Title: ${post.title}</h4>
+                            <p>Body: ${post.body}</p>
+
+                    </div>`;
+        });
+        document.getElementById("target1").innerHTML = output;
+      });
+}
