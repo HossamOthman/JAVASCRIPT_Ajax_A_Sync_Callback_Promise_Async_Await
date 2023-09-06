@@ -40,12 +40,17 @@
     padding: 10px;
     background-color: #eee;
 }
+.clickersContainer2 textarea {
+    padding: 10px;
+    background-color: #eee;
+}
 .target2 {
     padding: 10px;
     width: 100%;
-    height: 10vh;
+    height: 20vh;
     margin: 10px 0;
     background-color: lightgray;
+    overflow: scroll;
 }
 
 
