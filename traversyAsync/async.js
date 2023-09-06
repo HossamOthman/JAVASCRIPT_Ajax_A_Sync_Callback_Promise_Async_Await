@@ -13,14 +13,14 @@ function getpostsCall(){
             output += `<li>${post.title} ${post.body}</li>`
         })
         document.getElementById('main1').innerHTML = output;
-    }, 2000)
+    }, 1000)
 }
 
 function createPostCall(post, callback) {
     setTimeout(() => {
         postscall.push(post)
         callback();
-    }, 4000);
+    }, 3000);
 }
 getpostsCall();
 createPostCall({title: 'three', body: 'this is three'}, getpostsCall);
@@ -39,7 +39,7 @@ function getpostsPromise(){
             output += `<li>${post.title} ${post.body}</li>`
         })
         document.getElementById('main2').innerHTML = output;
-    }, 2000)
+    }, 4000)
 }
 
 function createPostPromise(post) {
@@ -77,4 +77,62 @@ Promise.all([promise1, promise2, promise3, promise4]).then(values => console.log
 ////////////////////////////////////////
 // Async Await Traversy
 
+const postsAsyncAwait =  [
+    {title: 'one', body: 'this is one'},
+    {title: 'two', body: 'this is two'}
+];
+function getpostsAsyncAwait(){
+    setTimeout(() => {
+        let output = '';
+        postsAsyncAwait.forEach((post) => {
+            output += `<li>${post.title} ${post.body}</li>`
+        })
+        document.getElementById('main3').innerHTML = output;
+    }, 8000)
+};
 
+function createPostAsyncAwait(post) {
+
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            postsAsyncAwait.push(post);
+
+            const error = false;
+
+            if(!error) {
+                resolve();
+            } else {
+                reject('something went wrong');
+            }
+        }, 10000);
+    });
+};
+
+
+async function init() {
+    await createPostAsyncAwait({title: 'three', body: 'this is three'});
+
+    getpostsAsyncAwait();
+};
+
+init();
+
+////////////////////////////////////////
+// Async Await with Fetch Traversy
+
+async function fetchUsers(){
+    const res = await fetch('https://jsonplaceholder.typicode.com/users');
+    const data = await res.json();
+    console.log(data);
+
+    let output = 'USERS API'
+    data.forEach(user => {
+        output +=   `<ul>
+                    <li>Name : ${user.name} </li> 
+                    <li>email : ${user.email} </li>
+                    </ul> `
+    })
+    document.getElementById('main4').innerHTML = output;
+};
+
+fetchUsers();
