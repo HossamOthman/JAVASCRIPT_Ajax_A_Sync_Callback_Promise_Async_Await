@@ -1,0 +1,49 @@
+.clickersContainer1 {
+    padding: 25px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px
+}
+
+.btn{
+    width: 150px;
+    padding: 5px;
+    font-size: large;
+    background-color: #333;
+    color: antiquewhite;
+    cursor: pointer;
+}
+.clickersContainer button:hover {
+
+    background-color: #444;
+    color: antiquewhite;
+}
+
+.target1 {
+    padding: 10px;
+    width: 100%;
+    height: 20vh;
+    margin: 10px 0 20px;
+    background-color: lightgray;
+    overflow: scroll;
+}
+.clickersContainer2 {
+    padding: 25px;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px
+}
+.clickersContainer2 input {
+    padding: 10px;
+    background-color: #eee;
+}
+.target2 {
+    padding: 10px;
+    width: 100%;
+    height: 10vh;
+    margin: 10px 0;
+    background-color: lightgray;
+}
