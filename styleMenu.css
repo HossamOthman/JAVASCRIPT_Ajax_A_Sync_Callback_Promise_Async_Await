@@ -117,12 +117,16 @@ nav .wrapper {
 .drop-menu li{
     padding-left: 20px;
     list-style: none;
+    /* height: 30px */
+    
 }
 
 .drop-menu > li > a {
     width: 100%;
     display: block;
     padding: 0;
+    height: 40px;
+    line-height: 40px;
 }
 
 .mega-box{
