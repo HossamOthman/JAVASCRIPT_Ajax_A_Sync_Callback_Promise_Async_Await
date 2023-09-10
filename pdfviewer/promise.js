@@ -35,7 +35,34 @@ const renderPage = num => {
         // output current page
         document.querySelector('#page-num').textContent = num;
     })
-}
+};
+
+// check for pages rendering 
+const queueRenderPage = num => {
+    if(pageIsRendering) {
+        pageNumIsPending = num;
+    } else {
+        renderPage(num);
+    }
+};
+
+// show prev page
+const showPrevPage = () => {
+    if(pageNum <= 1) {
+        return;
+    }
+    pageNum--;
+    queueRenderPage(pageNum);
+};
+
+// show next page
+const showNextPage = () => {
+    if(pageNum >= pdfDoc.numPages) {
+        return;
+    }
+    pageNum++;
+    queueRenderPage(pageNum);
+};
 
 // get the document... using Promise !!! 
 pdfjsLib.getDocument(url).promise.then(pdfDoc_ => {
@@ -46,3 +73,7 @@ pdfjsLib.getDocument(url).promise.then(pdfDoc_ => {
 
     renderPage(pageNum)
 });
+
+// button events
+document.querySelector('#prev-page').addEventListener('click', showPrevPage);
+document.querySelector('#next-page').addEventListener('click', showNextPage);
