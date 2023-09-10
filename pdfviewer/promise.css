@@ -1,0 +1,45 @@
+main{
+    padding: 0;
+}
+.top-bar {
+    background-color: #222;
+    color: #f1f1f1;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.btn {
+    background-color: coral;
+    color: #f1f1f1;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 5px 11px;
+    font-size: large;
+}
+.btn:hover {
+opacity: 0.9;
+}
+
+.page-info {
+    margin-left: 10px;
+    font-size: larger;
+}
+
+.canvasContainer{
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-content: center;
+}
+
+.error {
+    background-color: orangered;
+    color: #f1f1f1;
+    padding: 1rem;
+}
