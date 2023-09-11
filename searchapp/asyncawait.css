@@ -1,0 +1,35 @@
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.column h3{
+    padding: 35px 0 15px;
+    font-size: 47px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.column h3 img{
+    max-width: 56px;
+    height: fit-content;
+    opacity: 0.6;
+    margin-right: 5px;
+    padding: 7px;
+}
+.column .form{
+    padding: 0 0 15px;
+    font-size: 17px;
+    width: 75%;
+    border-radius: 7px;
+    border: none;
+    padding: 11px;
+    display: flex;
+    justify-content: center;
+}
+#match-list{
+    width: 100%;
+}
