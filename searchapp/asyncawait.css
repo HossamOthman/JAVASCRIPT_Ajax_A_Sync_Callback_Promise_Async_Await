@@ -6,7 +6,7 @@
     width: 100%;
 }
 
-.column h3{
+.column > h3{
     padding: 35px 0 15px;
     font-size: 47px;
     display: flex;
@@ -32,4 +32,23 @@
 }
 #match-list{
     width: 100%;
+}
+.card{
+    background-color: #333;
+    border-radius: 3px;
+    margin: 0 0 5px;
+    padding: 10px;
+    color: lightgray
+}
+.card > h3{
+    color: antiquewhite;
+    font-size: x-large;
+}
+.card > h4{
+    font-size: large;
+}
+.card > h4 > span{
+    color: whitesmoke;
+    margin: 0 5px;
+    font-size: larger;
 }
