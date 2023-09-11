@@ -28,7 +28,23 @@
     border: none;
     padding: 11px;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+}
+
+.column .form > p{
+    font-size: 17px;
+    padding: 11px;
+    display: flex;
+    justify-content: center;
+    font-size: large;
+}
+.column .form > p > span{
+    padding: 0 5px;
+    font-size: 17px;
+    font-size: large;
+    font-weight: bold;
 }
 #match-list{
     width: 100%;

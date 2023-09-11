@@ -1,5 +1,6 @@
 const search = document.getElementById('search');
 const matchList = document.getElementById('match-list');
+const counter = document.getElementById('counter');
 
 
 
@@ -22,10 +23,15 @@ const searchStates = async searchText => {
     });
     if (searchText.length == 0) {
         matches = [];
-    }
-    
+        matchList.innerHTML = '';
+        counter.innerHTML = ''
+    } else {
+
     // we got the Data now we stich it in the html! 
     outputHtml(matches);
+
+    counter.innerHTML = `found <span> ${matches.length} </span>  ${matches.length == 1 ? 'result' : 'results'}`
+    }
 };
 
 const outputHtml = matches => {
